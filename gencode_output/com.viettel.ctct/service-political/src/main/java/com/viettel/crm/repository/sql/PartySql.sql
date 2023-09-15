@@ -1,0 +1,25 @@
+CREATE TABLE `party_organization`
+    (
+        `party_organization_id`              NOT NULL AUTO_INCREMENT,
+       `code`  VARCHAR(100)             NOT NULL COMMENT 'Mã' ,
+       `name`  VARCHAR(250)             NOT NULL COMMENT 'Tên' ,
+       `effective_date`  DATE             NOT NULL COMMENT 'Ngày hiệu lực' ,
+       `exprited_date`  DATE              NULL COMMENT 'Ngày hết hiệu lực' ,
+       `parent_id`  BIGINT(10)              NULL COMMENT 'Đảng bộ cấp trên' ,
+       `type`  BIGINT(10)             NOT NULL COMMENT 'Loại hình tổ chức đảng' ,
+       `documentId`  BIGINT(10)              NULL COMMENT 'Số quyết định thành lập' ,
+       `founding_date`  DATE              NULL COMMENT 'Ngày thành lập' ,
+       `org_code_path`  VARCHAR(250)              NULL COMMENT 'Mã code' ,
+       `org_path`  VARCHAR(500)              NULL COMMENT 'path' ,
+       `coordinator_id`  BIGINT(10)              NULL  ,
+       `generate_order`  VARCHAR(100)              NULL  ,
+       `secretary_id`  BIGINT(10)              NULL COMMENT 'Đầu mối Bí thư (BT ĐUTĐ,BT ĐUVTT,BT ĐUCS,BT ĐUBP,BT CBCS,BT CBTT)' ,
+       `authorization_id`  BIGINT(10)              NULL  ,
+       `is_sign_out_voffice`  BIGINT(10)              NULL COMMENT '0: Trình ký, 1: Ban hành (Ngoài Voffice)' ,
+       `deputy_secretary_id`  BIGINT(10)              NULL COMMENT 'Đầu mối Phó bí thư (PBT ĐUTĐ,PBT ĐUVTT,PBT ĐUCS,PBT ĐUBP,PBT CBCS,PBT CBTT,P. Bt,Phó Bí thư Chi bộ)' ,
+       `deputy_secretary_code`  VARCHAR(250)              NULL  ,
+       `deputy_secretary_show_sign_image`  BIGINT(10)              NULL COMMENT 'Hiển thị ảnh ký phó bí thư: 0 - Không hiển thị, 1 - Hiển thị' ,
+       `co_chi_uy`  BIGINT(10)              NULL COMMENT 'Đánh dấu chi bộ cơ sở hoặc chi bộ trực thuộc Có chi ủy' ,
+       `party_org_order`  BIGINT(10)              NULL COMMENT 'Dùng để fix, sắp xếp thứ tự các tổ chức Đảng bộ/Chi bộ hiển thị trên cây Tổ chức Đảng ' ,
+        PRIMARY KEY (`party_organization_id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
